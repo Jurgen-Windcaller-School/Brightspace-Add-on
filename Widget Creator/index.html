@@ -17,7 +17,7 @@
     </div>
     <div id="content">
         <div id="toolbox">
-            <input type="text" placeholder="Search..." class="editableFixed" id="searchBar" contenteditable="true">
+            <input type="text" placeholder="Search..." class="editableFixed" id="searchBar">
             <div class="catagoryHeader">
                 <h2>
                     Edits
@@ -28,47 +28,47 @@
                 COMMON
             </h3>
             <div class="blocksGrid">
-                <button class="block">
+                <button class="block" id="colourButton">
                     <p style="font-family: Barlow, sans-serif;">
                         COLOUR
                     </p>
                 </button>
-                <button class="block">
+                <button class="block" id="sizeButton">
                     <p style="font-family: Barlow, sans-serif;">
                         SIZE
                     </p>
                 </button>
-                <button class="block">
+                <button class="block" id="imageButton">
                     <p style="font-family: Barlow, sans-serif;">
                         IMAGE
                     </p>
                 </button>
-                <button class="block">
+                <button class="block" id="textButton">
                     <p style="font-family: Barlow, sans-serif;">
                         TEXT
                     </p>
                 </button>
-                <button class="block">
+                <button class="block" id="linkButton">
                     <p style="font-family: Barlow, sans-serif;">
                         LINK
                     </p>
                 </button>
-                <button class="block">
+                <button class="block" id="functionButton">
                     <p style="font-family: Barlow, sans-serif;">
                         FUNCTION
                     </p>
                 </button>
-                <button class="block">
+                <button class="block" id="tbdButton">
                     <p style="font-family: Barlow, sans-serif;">
                         ...
                     </p>
                 </button>
-                <button class="block">
+                <button class="block" id="tbdButton">
                     <p style="font-family: Barlow, sans-serif;">
                         ...
                     </p>
                 </button>
-                <button class="block">
+                <button class="block" id="tbdButton">
                     <p style="font-family: Barlow, sans-serif;">
                         ...
                     </p>
@@ -84,13 +84,24 @@
         </div>
         <div id="library">
             <ul class="editTabsList">
-                <li class="tab">
-                    <h3 class="tabText">
-                        Settings
-                    </h3>
-                    <hr>
+                <li class="tabButton">
+                    <button style="padding: 0; margin: 0; background-color: transparent; border: none">
+                        <h3 class="tabText">
+                            Settings
+                        </h3>
+                        <hr>
+                    </button>
                 </li>
             </ul>
+            <div class="tabSettingContainer" id="settingsTab" style="display: none;">
+                <p>To Be Made...</p>
+            </div>
+            <div class="tabSettingContainer" id="colourTab">
+                <div id="colourPicker">
+                    <p class="settingTitle">Colour: </p>
+                    <input type="text" placeholder="#FFFFFF">
+                </div>
+            </div>
         </div>
     </div>
     <footer></footer>
