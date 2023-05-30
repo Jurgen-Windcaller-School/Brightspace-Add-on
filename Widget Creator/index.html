@@ -28,47 +28,47 @@
                 COMMON
             </h3>
             <div class="blocksGrid">
-                <button class="block" id="colourButton">
+                <button class="block" onclick="showSetting('colourTab');">
                     <p style="font-family: Barlow, sans-serif;">
                         COLOUR
                     </p>
                 </button>
-                <button class="block" id="sizeButton">
+                <button class="block" onclick="showSetting('sizeTab');">
                     <p style="font-family: Barlow, sans-serif;">
                         SIZE
                     </p>
                 </button>
-                <button class="block" id="imageButton">
+                <button class="block" onclick="showSetting('imageTab');">
                     <p style="font-family: Barlow, sans-serif;">
                         IMAGE
                     </p>
                 </button>
-                <button class="block" id="textButton">
+                <button class="block" onclick="showSetting('textTab');">
                     <p style="font-family: Barlow, sans-serif;">
                         TEXT
                     </p>
                 </button>
-                <button class="block" id="linkButton">
+                <button class="block" onclick="showSetting('linkTab');">
                     <p style="font-family: Barlow, sans-serif;">
                         LINK
                     </p>
                 </button>
-                <button class="block" id="functionButton">
+                <button class="block" onclick="showSetting('functionTab');">
                     <p style="font-family: Barlow, sans-serif;">
                         FUNCTION
                     </p>
                 </button>
-                <button class="block" id="tbdButton">
+                <button class="block" onclick="showSetting('tbdTab');">
                     <p style="font-family: Barlow, sans-serif;">
                         ...
                     </p>
                 </button>
-                <button class="block" id="tbdButton">
+                <button class="block" onclick="showSetting('tbdTab');">
                     <p style="font-family: Barlow, sans-serif;">
                         ...
                     </p>
                 </button>
-                <button class="block" id="tbdButton">
+                <button class="block" onclick="showSetting('tbdTab');">
                     <p style="font-family: Barlow, sans-serif;">
                         ...
                     </p>
@@ -84,16 +84,24 @@
         </div>
         <div id="library">
             <ul class="editTabsList">
-                <li class="tabButton">
-                    <button style="padding: 0; margin: 0; background-color: transparent; border: none">
+                <li class="tabButtonContainer">
+                    <button onclick="showSetting('settingsTab');" class="tabButton">
                         <h3 class="tabText">
                             Settings
                         </h3>
-                        <hr>
+                        <hr id="settingTabHR">
+                    </button>
+                </li>
+                <li class="tabButtonContainer">
+                    <button class="tabButton" id="customTabButton" style="display: none;">
+                        <h3 class="tabText" id="customTabText">
+                            <!-- TBD -->
+                        </h3>
+                        <hr id="customTabHR">
                     </button>
                 </li>
             </ul>
-            <div class="tabSettingContainer" id="settingsTab" style="display: none;">
+            <div class="tabSettingContainer" id="settingsTab">
                 <p>To Be Made...</p>
             </div>
             <div class="tabSettingContainer" id="colourTab">
