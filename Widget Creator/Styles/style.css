@@ -4,7 +4,20 @@
     --marble: #fdfdfd;
     --ash: #BCBCBC;
     --cobblestone: #7e7e86;
+
     --widgetColour: #8a2be2;
+    --primaryTextColour: #ffffff;
+    --secondaryTextColour: #000000;
+
+    --widgetWidth: 30vw;
+    --widgetHeight: 30vw;
+
+    --textScalar: 1;
+
+    --marbleRGB: 252, 252, 252;
+    --ashRGB: 188, 188, 188;
+    --cobblestoneRGB: 126, 126, 134;
+    --widgetColourRGB: 138, 43, 226;
 }
 
 html, body {
@@ -48,6 +61,11 @@ footer {
     height: 70vh;
 }
 
+#content > * {
+    box-sizing: border-box;
+    width: 100%;
+}
+
 #toolbox {
     padding: 2vh 1vw;
     background: var(--marble);
@@ -84,17 +102,25 @@ footer {
 
 #widget {
     display: flex;
-    width: 300px;
-    height: 300px;
+    flex-direction: column;
+    width: var(--widgetWidth);
+    height: var(--widgetHeight);
     background-color: var(--widgetColour);
+    box-sizing: border-box;
+    overflow: none;
     border-radius: 5px;
     align-items: center;
     justify-content: center;
 }
 
-#colourPicker {
-    display: flex;
-    flex-direction: row;
+#widget h1 {
+    font-size: calc(6vw * var(--textScalar));
+    color: var(--primaryTextColour);
+}
+
+#widget p {
+    font-size: calc(1.15em * var(--textScalar));
+    color: var(--secondaryTextColour);
 }
 
 .editableFixed {
@@ -126,11 +152,21 @@ footer {
 }
 
 .block {
+    border-radius: 0.25em;
     display: flex;
+    padding: 0.125em;
+    margin: 0.125em;
     justify-content: center;
     align-items: center;
     background-color: var(--marble);
     border: none;
+    font-size: 0.85em;
+    cursor: pointer;
+    transition: 0.25s;
+}
+
+.block:hover {
+    background-color: rgba(var(--ashRGB), 0.2);
 }
 
 .editTabsList {

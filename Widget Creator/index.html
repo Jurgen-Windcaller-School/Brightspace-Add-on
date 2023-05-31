@@ -77,9 +77,12 @@
         </div>
         <div id="workspace">
             <div id="widget">
-                <h1 style="color: white; font-size: 4em;">
+                <h1>
                     WIDGET
                 </h1>
+                <p contenteditable="true">
+                    Placeholder.
+                </p>
             </div>
         </div>
         <div id="library">
@@ -106,13 +109,44 @@
             </div>
             <div class="tabSettingContainer" id="colourTab">
                 <div id="colourPicker">
-                    <p class="settingTitle">Colour: </p>
-                    <input type="text" placeholder="#FFFFFF">
+                    <label for="colourPickerInput-bg" class="settingTitle">Background Colour:</label>
+                    <input id="colourPickerInput-bg" type="color"><br />
+
+                    <label for="colourPickerInput-htext" class="settingTitle">Primary Text Colour:</label>
+                    <input id="colourPickerInput-htext" type="color"><br />
+
+                    <label for="colourPickerInput-ptext" class="settingTitle">Secondary Text Colour:</label>
+                    <input id="colourPickerInput-ptext" type="color"><br />
+                </div>
+            </div>
+
+            <div class="tabSettingContainer" id="sizeTab">
+                <div id="sizePicker">
+                    <label for="sizeInput" class="settingTitle">Size: </label>
+                    <select name="sizeInput" id="sizeInput" style="font-family: 'Barlow', sans-serif; font-size: 0.85em; font-weight: 200; background: var(--marble); border: none;">
+                        <option value="square" selected>Square</option>
+                        <option value="portrait">Portrait</option>
+                        <option value="landscape">Landscape</option>
+                    </select>
+                </div>
+            </div>
+
+
+            <div class="tabSettingContainer" id="functionTab">
+                <div id="functionPicker">
+                    <label for="functionInput" class="settingTitle">Type: </label>
+                    <select name="functionInput" id="functionInput" style="font-family: 'Barlow', sans-serif; font-size: 0.85em; font-weight: 200; background: var(--marble); border: none;">
+                        <option value="blank" selected>Blank</option>
+                        <option value="announcement">Announcement</option>
+                        <option value="randomizer">Group Randomizer</option>
+                    </select>
                 </div>
             </div>
         </div>
     </div>
     <footer></footer>
     <script src="Scripts/script.js"></script>
+    <script src="Scripts/Settings/colour.js"></script>
+    <script src="Scripts/Settings/size.js"></script>
 </body>
 </html>
