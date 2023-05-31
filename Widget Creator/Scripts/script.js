@@ -1,9 +1,6 @@
 let widget = document.getElementById("widget");
 let widgetText = document.getElementById("widgetTitle");
 
-let bgColourPicker = document.getElementById("bgColourPicker");
-let textColourPicker = document.getElementById("textColourPicker");
-
 let textValuePicker = document.getElementById("textValuePicker");
 
 // let alignment = document.querySelectorAll('input[name="alignment"]');
@@ -22,13 +19,9 @@ let textValuePicker = document.getElementById("textValuePicker");
 // })
 
 document.addEventListener("DOMContentLoaded", function() {
-    bgColourPicker.onchange = changeBgColour;
-    textColourPicker.onchange = changeTextColour;
     textValuePicker.onchange = changeTextValue;
 }, false);
 
-function changeBgColour(event) { widget.style["background-color"] = event.target.value; }
-function changeTextColour(event) { widgetText.style["color"] = event.target.value; }
 function changeTextValue(event) { widgetText.textContent = event.target.value; }
 function changeTextAlignment(alignment) { widgetText.style["text-align"] = alignment; }
 
