@@ -113,9 +113,14 @@ footer {
     justify-content: center;
 }
 
-#colourPicker {
-    display: flex;
-    flex-direction: row;
+#widget h1 {
+    font-size: calc(6vw * var(--textScalar));
+    color: var(--primaryTextColour);
+}
+
+#widget p {
+    font-size: calc(1.15em * var(--textScalar));
+    color: var(--secondaryTextColour);
 }
 
 .editableFixed {
