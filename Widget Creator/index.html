@@ -77,7 +77,7 @@
         </div>
         <div id="workspace">
             <div id="widget">
-                <h1 style="color: white; font-size: 4em;">
+                <h1 id="widgetTitle">
                     WIDGET
                 </h1>
             </div>
@@ -102,12 +102,47 @@
                 </li>
             </ul>
             <div class="tabSettingContainer" id="settingsTab">
-                <p>To Be Made...</p>
+                <div class="setting">
+                    <p class="settingTitle">Blah Blah Blah:</p>
+                </div>
             </div>
             <div class="tabSettingContainer" id="colourTab">
-                <div id="colourPicker">
-                    <p class="settingTitle">Colour: </p>
-                    <input type="text" placeholder="#FFFFFF">
+                <div class="setting">
+                    <p class="settingTitle">Background Colour: </p>
+                    <input type="color" class="colourPicker" id="bgColourPicker">
+                </div>
+                <div class="setting">
+                    <p class="settingTitle">Text Colour: </p>
+                    <input type="color" class="colourPicker" id="textColourPicker">
+                </div>
+            </div>
+            <div class="tabSettingContainer" id="textTab">
+                <div class="setting">
+                    <p class="settingTitle">Text Value: </p>
+                    <input type="text" class="textPicker" id="textValuePicker">
+                </div>
+                <div class="setting">
+                    <p class="settingTitle">Text Align: </p>
+                    <div style="display: flex; flex-direction: column;">
+                        <div style="display: flex; flex-direction: row;">
+                            <input type="radio" name="alignment" onchange="changeTextAlignment('right');" id="textAlignRight" checked>
+                            <label for="textAlignRight">Right</label>
+                        </div>
+                        <div style="display: flex; flex-direction: row;">
+                            <input type="radio" name="alignment" onchange="changeTextAlignment('left');" id="textAlignLeft">
+                            <label for="textAlignLeft">Left</label>
+                        </div>
+                    </div>
+                    <div style="display: flex; flex-direction: column;">
+                        <div style="display: flex; flex-direction: row;">
+                            <input type="radio" name="alignment" onchange="changeTextAlignment('center');" id="textAlignCenter">
+                            <label for="textAlignCenter">Center</label>
+                        </div>
+                        <div style="display: flex; flex-direction: row;">
+                            <input type="radio" name="alignment" onchange="changeTextAlignment('justify');" id="textAlignJustify">
+                            <label for="textAlignJustify">Justify</label>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>

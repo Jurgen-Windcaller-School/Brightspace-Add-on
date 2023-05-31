@@ -1,3 +1,37 @@
+let widget = document.getElementById("widget");
+let widgetText = document.getElementById("widgetTitle");
+
+let bgColourPicker = document.getElementById("bgColourPicker");
+let textColourPicker = document.getElementById("textColourPicker");
+
+let textValuePicker = document.getElementById("textValuePicker");
+
+// let alignment = document.querySelectorAll('input[name="alignment"]');
+// let prevAlignment = null;
+
+// alignment = Array.from(alignment);
+
+// alignment.forEach((elem) => {
+//     elem.addEventListener("change", function() {
+//         (prevAlignment) ? console.log(prevAlignment.value): null;
+//         if (this !== prevAlignment) {
+//             prevAlignment = this;
+//         }
+//         console.log(this.name + " " + this.value);
+//     })
+// })
+
+document.addEventListener("DOMContentLoaded", function() {
+    bgColourPicker.onchange = changeBgColour;
+    textColourPicker.onchange = changeTextColour;
+    textValuePicker.onchange = changeTextValue;
+}, false);
+
+function changeBgColour(event) { widget.style["background-color"] = event.target.value; }
+function changeTextColour(event) { widgetText.style["color"] = event.target.value; }
+function changeTextValue(event) { widgetText.textContent = event.target.value; }
+function changeTextAlignment(alignment) { widgetText.style["text-align"] = alignment; }
+
 function showSetting(settingID)
 {
     let settingTabs = document.getElementsByClassName("tabSettingContainer");
@@ -17,8 +51,9 @@ function showSetting(settingID)
     if (settingID != "settingsTab")
     {
         newTab.style["display"] = "block";
-        newTabHR.style["border-color"] = "blue";
-        settingTabHR.style["border-color"] = "black";
+
+        newTabHR.style["border-color"] = "#79C6FB";
+        settingTabHR.style["border-color"] = "#919191";
 
         newTab.addEventListener("click", () => showSetting(settingID));
 
@@ -26,7 +61,7 @@ function showSetting(settingID)
     }
     else 
     {
-        newTabHR.style["border-color"] = "black";
-        settingTabHR.style["border-color"] = "blue";
+        newTabHR.style["border-color"] = "#919191";
+        settingTabHR.style["border-color"] = "#79C6FB";
     }
 }
