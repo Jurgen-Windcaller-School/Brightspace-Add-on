@@ -132,6 +132,10 @@ footer {
     justify-content: space-between;
 }
 
+.textSizePicker {
+    width: 25%;
+}
+
 .editableFixed {
     border: 2px solid var(--cobblestone);
     border-radius: 5px;
@@ -216,6 +220,7 @@ footer {
     display: flex;
     align-items: center;
     flex-direction: row;
+    margin-bottom: 15px;
 }
 
 .colourPicker {
