@@ -71,3 +71,15 @@ function changeTextAlignment(radio)
         widgetText.style["text-align"] = radio.value; 
     }
 }
+
+let titleSize = document.getElementById("titleSize");
+let placeholderSize = document.getElementById("placeholderSize");
+
+titleSize.addEventListener("change", changeTitleTextSize);
+placeholderSize.addEventListener("change", changeSecTextSize);
+
+function changeTitleTextSize(event) { 
+    widgetText.style["fontSize"] = event.target.value + vw;
+    document.documentElement.style.getPropertyValue('--textScalar');
+}
+function changeSecTextSize(event) { placeholderText.style["fontSize"] = event.target.value + "px"; }
