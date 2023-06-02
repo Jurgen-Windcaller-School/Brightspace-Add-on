@@ -4,6 +4,8 @@
     --marble: #fdfdfd;
     --ash: #BCBCBC;
     --cobblestone: #7e7e86;
+    --twilight: #4073E9;
+    --midnight: #3962c0;
 
     --widgetColour: #8a2be2;
     --primaryTextColour: #ffffff;
@@ -44,8 +46,10 @@ h3 {
 }
 
 footer {
-    height: 10vh;
+    display: flex;
+    height: 7.8vh;
     background: var(--cobblestone);
+    align-items: center;
 }
 
 #menu {
@@ -109,18 +113,23 @@ footer {
     box-sizing: border-box;
     overflow: none;
     border-radius: 5px;
-    align-items: center;
     justify-content: center;
 }
 
 #widget h1 {
     font-size: calc(6vw * var(--textScalar));
     color: var(--primaryTextColour);
+    text-align: center;
 }
 
 #widget p {
     font-size: calc(1.15em * var(--textScalar));
     color: var(--secondaryTextColour);
+    text-align: center;
+}
+
+#topBar {
+    justify-content: space-between;
 }
 
 .editableFixed {
@@ -214,4 +223,43 @@ footer {
     background-color: transparent; 
     border: none; 
     width: 25%;
+}
+
+.selectOptions {
+    font-family: 'Barlow', sans-serif; 
+    font-size: 0.85em; 
+    font-weight: 200; 
+    background: var(--marble); 
+    border: none;
+}
+
+.flexColumn {
+    display: flex; 
+    flex-direction: column;
+}
+
+.flexRow {
+    display: flex; 
+    flex-direction: row;
+}
+
+.buttonText {
+    font-family: Barlow, sans-serif;
+}
+
+.blueButton {
+    background-color: var(--twilight);
+    border: 5px solid var(--midnight);
+    border-radius: 5px;
+    height: 60%;
+    width: 8vw;
+    margin: 10px 15px 0 15px
+}
+
+.blueButtonText {
+    color: white;
+    font-weight: bold;
+    font-size: 1.5em;
+    margin: 0;
+    padding: 0;
 }
