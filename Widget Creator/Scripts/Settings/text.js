@@ -1,7 +1,8 @@
 let widgetText = document.getElementById("widgetTitle");
+let placeholderText = document.getElementById("widgetPlaceholder");
 
 settings = {
-    maxLen: 18,
+    maxLen: 15,
 }
 
 keys = {
@@ -39,7 +40,10 @@ utils.navigational[keys['downArrow']] = true;
 utils.navigational[keys['leftArrow']] = true;
 utils.navigational[keys['rightArrow']] = true;
 
-widgetText.addEventListener('keydown', function(event) {
+widgetText.addEventListener('keydown', maxLengthRestrictor);
+placeholderText.addEventListener('keydown', maxLengthRestrictor);
+
+function maxLengthRestrictor(event) {
     let len = event.target.innerText.trim().length;
     let hasSelection = false;
     let selection = window.getSelection();
@@ -58,13 +62,12 @@ widgetText.addEventListener('keydown', function(event) {
         event.preventDefault();
         return false;
     }
-});
+}
 
 function changeTextAlignment(radio) 
 { 
     if (radio.checked)
     {
         widgetText.style["text-align"] = radio.value; 
-        // console.log(widgetText.style["text-align"]);
     }
 }
