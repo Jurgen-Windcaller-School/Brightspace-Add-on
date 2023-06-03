@@ -2,7 +2,8 @@ let widgetText = document.getElementById("widgetTitle");
 let placeholderText = document.getElementById("widgetPlaceholder");
 
 settings = {
-    maxLen: 15,
+    titleLen: 15,
+    textLen: 185,
 }
 
 keys = {
@@ -40,10 +41,10 @@ utils.navigational[keys['downArrow']] = true;
 utils.navigational[keys['leftArrow']] = true;
 utils.navigational[keys['rightArrow']] = true;
 
-widgetText.addEventListener('keydown', maxLengthRestrictor);
-placeholderText.addEventListener('keydown', maxLengthRestrictor);
+widgetText.addEventListener('keydown', titleLengthRestrictor);
+placeholderText.addEventListener('keydown', bodyLengthRestrictor);
 
-function maxLengthRestrictor(event) {
+function titleLengthRestrictor(event) {
     let len = event.target.innerText.trim().length;
     let hasSelection = false;
     let selection = window.getSelection();
@@ -58,7 +59,28 @@ function maxLengthRestrictor(event) {
         return true;
     }
 
-    if (len >= settings.maxLen && !hasSelection) {
+    if (len >= settings.titleLen && !hasSelection) {
+        event.preventDefault();
+        return false;
+    }
+}
+
+function bodyLengthRestrictor(event) {
+    let len = event.target.innerText.trim().length;
+    let hasSelection = false;
+    let selection = window.getSelection();
+    let isSpecial = utils.isSpecial(event);
+    let isNavigational = utils.isNavigational(event);
+
+    if (selection) {
+        hasSelection = !!selection.toString();
+    }
+
+    if (isSpecial || isNavigational) {
+        return true;
+    }
+
+    if (len >= settings.textLen && !hasSelection) {
         event.preventDefault();
         return false;
     }
@@ -68,7 +90,7 @@ function changeTextAlignment(radio)
 { 
     if (radio.checked)
     {
-        widgetText.style["text-align"] = radio.value; 
+        document.documentElement.style.setProperty('--titleAlign', radio.value); 
     }
 }
 
@@ -79,7 +101,8 @@ titleSize.addEventListener("change", changeTitleTextSize);
 placeholderSize.addEventListener("change", changeSecTextSize);
 
 function changeTitleTextSize(event) { 
-    widgetText.style["fontSize"] = event.target.value + vw;
-    document.documentElement.style.getPropertyValue('--textScalar');
+    document.documentElement.style.setProperty('--titleTextSize', event.target.value / 3 + 'vw');
 }
-function changeSecTextSize(event) { placeholderText.style["fontSize"] = event.target.value + "px"; }
+function changeSecTextSize(event) { 
+    document.documentElement.style.setProperty('--bodyTextSize', event.target.value / 3 + 'vw');
+}

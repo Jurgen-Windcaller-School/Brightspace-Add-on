@@ -1,0 +1,129 @@
+@import url('https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+:root {
+    --marble: #fdfdfd;
+    --ash: #BCBCBC;
+    --cobblestone: #7e7e86;
+    --twilight: #4073E9;
+    --midnight: #3962c0;
+
+    --widgetColour: #8a2be2;
+    --primaryTextColour: #ffffff;
+    --secondaryTextColour: #000000;
+
+    --widgetWidth: 30vw;
+    --widgetHeight: 30vw;
+
+    --textScalar: 1;
+
+    --marbleRGB: 252, 252, 252;
+    --ashRGB: 188, 188, 188;
+    --cobblestoneRGB: 126, 126, 134;
+    --widgetColourRGB: 138, 43, 226;
+}
+
+html, body {
+  height: 100%;
+  width: 100%;
+  font-family: 'Barlow', sans-serif;
+  padding: 0;
+  margin: 0;
+  font-weight: 300;
+  overflow-x: hidden;
+}
+
+h1 {
+    font-weight: 500;
+}
+
+h2 {
+    font-weight: 400;
+}
+
+h3 {
+    margin: 0;
+    font-weight: 300;
+}
+
+footer {
+    display: flex;
+    height: 7.8vh;
+    background: var(--cobblestone);
+    align-items: center;
+}
+
+nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 2.5vw;
+    border-bottom: 1px solid var(--cobblestone);
+    width: 100%;
+    font-size: 1.1em;
+    padding: 1em 0;
+    height: 15vh;
+    box-sizing: border-box;
+}
+
+nav h1 {
+    margin-left: 5vw;
+    flex: 1
+}
+nav ul {
+    flex: 4;
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    gap: 1.75em;
+}
+
+nav div {
+    flex: 8;
+    text-align: right;
+    margin-right: 5vw;
+}
+
+nav div a {
+    background: var(--twilight);
+    padding: 0.5em 1.5em 0.5em 1.5em;
+    color: var(--marble);
+    text-decoration: none;
+    font-weight: 500;
+    border-radius: 10px;
+}
+
+#landing {
+    background: var(--ash);
+    height: 80vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2.5vw;
+    padding: 0 10vw;
+}
+
+#introDesc {
+    width: 40vw;
+    font-size: 1.125em;
+    line-height: 2em;
+}
+
+#introDesc h1 {
+    font-size: 2.25em;
+    font-weight: 600;
+    line-height: 1.35em;
+}
+
+#introDesc button {
+    background: var(--twilight);
+    padding: 1em 1.5em 1em 1.5em;
+    color: var(--marble);
+    font-size: 1.125em;
+    font-family: 'Barlow', sans-serif;
+    text-decoration: none;
+    font-weight: 500;
+    border-radius: 2em;
+    border: none;
+    width: 90%;
+    margin-left: 5%;
+}

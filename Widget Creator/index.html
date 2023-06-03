@@ -14,20 +14,23 @@
             <h1>
                 Widget Editor
             </h1>
+        </div>
+        <div class="flexRow">
+            <input type="text" placeholder="Untitled Widget" class="editableFixed" id="widgetName">
             <div class="flexRow">
-                <button class="blueButton">
+                <button onclick="exportCode()" class="blueButton">
                     <p class="buttonText blueButtonText">
                         Export
                     </p>
                 </button>
-                <button class="blueButton">
+                <button onclick="saveCode()" class="blueButton">
                     <p class="buttonText blueButtonText">
                         Save
                     </p>
                 </button>
             </div>
+            <p id="saveStatusUpdates" class="saveInactive">&emsp;&nbsp;( Saved )</p>
         </div>
-        <input type="text" placeholder="Untitled Widget" class="editableFixed" id="widgetName">
     </div>
     <div id="content">
         <div id="toolbox">
@@ -91,10 +94,10 @@
         </div>
         <div id="workspace">
             <div id="widget">
-                <h1 contenteditable="true" id="widgetTitle">
+                <h1 contenteditable="true" class="editText" id="widgetTitle">
                     WIDGET
                 </h1>
-                <p contenteditable="true" id="widgetPlaceholder">
+                <p contenteditable="true" class="editText" id="widgetPlaceholder">
                     Placeholder.
                 </p>
             </div>
@@ -120,7 +123,6 @@
             </ul>
             <div class="tabSettingContainer" id="settingsTab">
                 <div class="setting">
-                    <p class="settingTitle">Blah Blah Blah:</p>
                 </div>
             </div>
             <div class="tabSettingContainer" id="colourTab">
@@ -137,7 +139,7 @@
             </div>
             <div class="tabSettingContainer" id="textTab">
                 <div class="setting">
-                    <p class="settingTitle">Text Align: </p>
+                    <p class="settingTitle">Title Align: </p>
                     <div class="flexColumn">
                         <div class="flexRow">
                             <input type="radio" name="alignment" onchange="changeTextAlignment(this);" value="left" id="textAlignLeft">
@@ -192,12 +194,13 @@
     </div>
     <footer>
         <p style="color: white; margin-left: 10px;">
-            © COMPANY_NAME, 2023
+            Deskspace, 2023
         </p>
     </footer>
     <script src="Scripts/Settings/tab.js"></script>
     <script src="Scripts/Settings/text.js"></script>
     <script src="Scripts/Settings/colour.js"></script>
     <script src="Scripts/Settings/size.js"></script>
+    <script src="Scripts/save.js"></script>
 </body>
 </html>
