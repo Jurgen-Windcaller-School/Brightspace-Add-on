@@ -18,7 +18,7 @@ var settingsList = {
 };
 
 function saveCode() {
-    var settingsList = {
+    settingsList = {
         'name' : document.getElementById('widgetName').value,
         
         'bgCol' : getComputedStyle(document.documentElement).getPropertyValue('--widgetColour'),
