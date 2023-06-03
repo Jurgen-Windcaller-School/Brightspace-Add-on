@@ -67,9 +67,9 @@ function exportCode() {
         }
         s += (key + "=" + encodeURIComponent(settingsList[key]));
     }
-    console.log(window.location.href.split("Widget%20Creator/index.html")[0].concat("Widget%20Templates/generator.htm?") + s);
-    modalLink.innerHTML = window.location.href.split("Widget%20Creator/index.html")[0].concat("Widget%20Templates/generator.htm?") + s;
-    modalLink.href = window.location.href.split("Widget%20Creator/index.html")[0].concat("Widget%20Templates/generator.htm?") + s;
+    console.log(window.location.href.split("widgetCreator/index.html")[0].concat("widgetTemplates/generator.htm?") + s);
+    modalLink.innerHTML = window.location.href.split("widgetCreator/index.html")[0].concat("widgetTemplates/generator.htm?") + s;
+    modalLink.href = window.location.href.split("widgetCreator/index.html")[0].concat("widgetTemplates/generator.htm?") + s;
 }
 
 // C: 0.07
