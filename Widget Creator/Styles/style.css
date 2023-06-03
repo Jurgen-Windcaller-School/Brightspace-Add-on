@@ -111,8 +111,8 @@ footer {
 #widget {
     display: flex;
     flex-direction: column;
-    width: 100vw;
-    height: 100vh;
+    width: var(--widgetWidth);
+    height: var(--widgetHeight);
     background-color: var(--widgetColour);
     box-sizing: border-box;
     overflow: none;
@@ -293,3 +293,72 @@ footer {
 .saveActive {
     display: inherit;
 }
+
+/* The Modal (background) */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: hidden; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+    box-sizing: border-box;
+  }
+  
+  /* Modal Content/Box */
+  .modal-content {
+    background-color: var(--marble);
+    border-radius: 1em;
+    overflow: hidden;
+    margin: 15% auto; /* 15% from the top and centered */
+    padding: 0.5em;
+    border: 1px solid var(--ash);
+    width: 80%; /* Could be more or less, depending on screen size */
+    box-sizing: border-box;
+    height: 7.5em;
+    display: flex;
+    gap: 5%;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  /* The Close Button */
+  #closeModal {
+    color: var(--cobblestone);
+    /* float: right; */
+    font-size: 28px;
+    font-weight: bold;
+  }
+  
+  #closeModal:hover,
+  #closeModal:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+  }
+
+  .modalContainer {
+    width: 90%;
+    background: var(--ash);
+    border: 2px solid var(--cobblestone);
+    padding: 0.75em;
+    height: 3em;
+    border-radius: 0.25em;
+    overflow-x: scroll;
+    overflow-y: hidden;
+    box-sizing: border-box;
+    white-space: nowrap;
+  }
+
+  .modalContainer a {
+    color: black;
+    transition: 0.25s;
+  }
+
+  .modalContainer a:hover {
+    color: var(--midnight);
+  }

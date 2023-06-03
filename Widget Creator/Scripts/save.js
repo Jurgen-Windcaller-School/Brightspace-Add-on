@@ -47,6 +47,19 @@ function saveCode() {
 
 function exportCode() {
     saveCode();
+    var modal = document.getElementById("myModal");
+    modal.style.display = "block";
+    var span = document.getElementById("closeModal");
+    var modalLink = document.getElementById("modalLink");
+    span.onclick = function() {
+        modal.style.display = "none";
+    }
+    window.onclick = function(event) {
+        if (event.target == modal) {
+            modal.style.display = "none";
+        }
+    }
+
     var s = "";
     for (var key in settingsList) {
         if (s != "") {
@@ -54,16 +67,9 @@ function exportCode() {
         }
         s += (key + "=" + encodeURIComponent(settingsList[key]));
     }
-    console.log("http://127.0.0.1:3000/Widget%20Templates/generator.htm/?" + s);
-
-    // search = window.location.href + "/?" + s;
-    // search = search.split('?')[1];
-
-    // console.log(JSON.parse('{"' + search.replace(/&/g, '", "')
-    //         .replace(/=/g, '":"') + '"}',
-    //     function(key, value) {
-    //     return key === "" ? value : decodeURIComponent(value)
-    //     }));
+    console.log(window.location.href.split("Widget%20Creator/index.html")[0].concat("Widget%20Templates/generator.htm?") + s);
+    modalLink.innerHTML = window.location.href.split("Widget%20Creator/index.html")[0].concat("Widget%20Templates/generator.htm?") + s;
+    modalLink.href = window.location.href.split("Widget%20Creator/index.html")[0].concat("Widget%20Templates/generator.htm?") + s;
 }
 
 // C: 0.07
